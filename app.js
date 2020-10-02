@@ -18,7 +18,7 @@ app.get('/weather', (req,res) => {
 app.get('/weather/:city', async function (req,res) {
     var city = req.params.city;
     var appId = '9f14818550a75877c7dcdd3994f0f5d6';
-    var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appId}`;
+    var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appId}&units=metric`;
     var result = await fetch(url);
     var weather = await result.json();
 
