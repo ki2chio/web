@@ -7,7 +7,6 @@ app.set('view engine', 'hbs');
 app.get('/', (req, res) =>{
     res.send("Hello, JS");
 });
-
 app.get('/weather', (req,res) => {
     const weather = {
         description: "Clear sky"
@@ -17,10 +16,11 @@ app.get('/weather', (req,res) => {
 app.get('/weather/:city', (req,res) => {
     res.send(req.params.city);
 });
-
 app.get('/login', (req,res) => {
     res.send("login page");
 });
+
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.listen(3000, () =>{
     console.log("Example app listening onport 3000");
