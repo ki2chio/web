@@ -9,7 +9,7 @@ app.set('view engine', 'hbs');
 
 
 app.get('/', (req, res) =>{
-    res.send("Hello, JS");
+    res.send("Hello JS<br><a href='../login'>Press for Continue</a>");
 });
 app.get('/weather', (req,res) => {
     const weather = {
@@ -27,7 +27,7 @@ app.get('/weather/:city', async function (req,res) {
     res.render('weather.hbs',{city, weather});
 });
 app.get('/login', (req,res) => {
-    res.send("login page");
+    res.render('login.hbs')
 });
 
 
