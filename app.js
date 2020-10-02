@@ -1,5 +1,6 @@
 const express = require("express");
 const hbs = require("hbs");
+hbs.registerPartials(__dirname + '/views/partials');
 
 let app = express();
 app.set('view engine', 'hbs');
@@ -20,7 +21,7 @@ app.get('/login', (req,res) => {
     res.send("login page");
 });
 
-hbs.registerPartials(__dirname + '/views/partials');
+
 
 app.listen(3000, () =>{
     console.log("Example app listening onport 3000");
