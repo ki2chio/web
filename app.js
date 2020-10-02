@@ -1,8 +1,8 @@
 const express = require("express");
 const hbs = require("hbs");
 hbs.registerPartials(__dirname + '/views/partials');
-
 let app = express();
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) =>{
